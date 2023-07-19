@@ -29,7 +29,8 @@ SECRET_KEY = 'django-insecure-@jz+#s3_-q(!b)nab&#y5ip@q1q6k0$$weofj17+hc72v=v8$s
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1', 'localhost']
 CORS_ORIGIN_ALLOW_ALL = True
 
 
@@ -95,13 +96,14 @@ WSGI_APPLICATION = 'web.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': '127.0.0.1',
+        'NAME': 'laozoom_django',
+        'USER': 'laozoom_roots',
+        'PASSWORD': '@Mmns$2022',
+        'HOST': 'laozoom.la',
         'PORT': '3306',
     }
 }
