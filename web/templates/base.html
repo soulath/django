@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ລະບົບ ERP</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto Sans Lao">
+    <style>
+    body {
+      font-family: Noto Sans Lao;
+    }
+    </style>
+  </head>
+  <body>
+  <br>
+  <br>
+  {% if messages %}
+{% for message in messages %}
+
+<div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
+  {{ message }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+
+{% endfor %}
+{% endif %}
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'home' %}">ERP</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'home' %}">ຫນ້າຫັລກ</a>
+            </li>
+            {% if user.is_authenticated %}
+            <a class="nav-link" href="{% url 'addblog' %}">ເພີ່ມລາຍການ</a>
+            <a class="nav-link" href="{% url 'logout' %}">ອກກລະບົບ</a>
+            <a class="nav-link" href="/">ສະບາຍດີ:   {{user.username}}</a>
+          {% else %}
+            <a class="nav-link" href="/login"> ເຂົ້າລະບົບ </a>
+            <a class="nav-link" href="/registerpage"> ສະໝັກສະມາຊິກ </a>
+          {% endif %}
+          </ul>
+          <form class="d-flex" role="search" action="{% url 'home' %}">
+            <input class="form-control me-2" type="search" placeholder="ປ້ອນຂໍ້ມູນທີທ່ານຕ້ອງການຄົ້ນຫາ" aria-label="Search" name="search">
+            <button class="btn btn-outline-success" type="submit">ຄົ້ນຫາ</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <br>
+    <main class="container">
+      <div class="bg-light p-5 rounded">
+        <h1>ລະບົບຈັດການ</h1>
+        <p class="lead">ທົດລອງລະບົບໃຫ້ເຂົ້າໃຈຕາມຄວາມຕ້ອງການ</p>
+        <a class="btn btn-lg btn-success" href="/docs/5.3/components/navbar/" role="button">ເບິງລາຍລະອຽດ &raquo;</a>
+      </div>
+    </main>
+    
+    {% block content %}
+	
+    {% endblock %}
+   
+  </body>
+</html>
