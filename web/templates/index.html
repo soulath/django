@@ -2,10 +2,11 @@
 {% load crispy_forms_tags %}
 {% block content %}
 <div class="container">
-  {% for list in dataset %} 
-  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-  <div class="col-3">
-    <div class="card h-100">
+  <div class="col-md-9">
+  <div class="row">
+    {% for list in dataset %} 
+    <div class="col-md-4">
+    <div class="card">
       <img src="{{list.image.url}}" class="card-img-top">
       <div class="card-body">
         <h5 class="card-title">{{list.name}}</h5>
@@ -19,10 +20,14 @@
     </div>
   </div>
 </div>
-
-
+</div>
+{% empty %}
+<h3>no picture</h3>
 {% endfor %}
 
+
 </div>
+
+
                
 {% endblock %}
