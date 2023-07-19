@@ -28,10 +28,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 SECRET_KEY = 'django-insecure-@jz+#s3_-q(!b)nab&#y5ip@q1q6k0$$weofj17+hc72v=v8$s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1', 'localhost']
+DEBUG = False
+ALLOWED_HOSTS = ['*']
 CORS_ORIGIN_ALLOW_ALL = True
 
 
