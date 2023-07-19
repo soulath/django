@@ -99,14 +99,7 @@ WSGI_APPLICATION = 'web.wsgi.application'
 
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'laozoom_django',
-        'USER': 'laozoom_roots',
-        'PASSWORD': '@Mmns$2022',
-        'HOST': 'laozoom.la',
-        'PORT': '3306',
-    }
+
 }
 
 
