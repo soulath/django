@@ -97,16 +97,6 @@ WSGI_APPLICATION = 'web.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'laozoom_django',
-        'USER': 'laozoom_roots',
-        'PASSWORD': '@Mmns$2022',
-        'HOST': 'laozoom.la',
-        'PORT': '3306',
-    }
-}
 
 
 # Password validation
