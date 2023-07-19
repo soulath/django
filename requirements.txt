@@ -8,6 +8,7 @@ Django==4.1.5
 django-bootstrap-v5==1.0.11
 django-cors-headers==3.14.0
 django-crispy-forms==1.14.0
+django-widget-tweaks==1.4.8
 djangorestframework==3.14.0
 drf-yasg==1.21.5
 idna==3.4
@@ -19,11 +20,14 @@ mysql==0.0.3
 mysqlclient==2.1.1
 packaging==23.1
 Pillow==9.4.0
+psycopg2-binary==2.9.6
 pytz==2022.7.1
 requests==2.31.0
 ruamel.yaml==0.17.31
 ruamel.yaml.clib==0.2.7
 soupsieve==2.3.2.post1
 sqlparse==0.4.3
+style==1.1.0
+update==0.0.1
 uritemplate==4.1.1
 urllib3==2.0.2
