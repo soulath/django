@@ -3,11 +3,7 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col-sm">
-          
-        </div>
-        <div class="col-sm">
-            <form method="POST" novalidate class="form-control">
+            <form method="POST" class="form-control">
                 {% csrf_token %}
                 <h2>Sign Up</h2>
                     
@@ -23,10 +19,8 @@
                      {{ field.label_tag }} {{ field }}
                 </p>
                 {% endfor %}
-                <input type="submit" value="Register" />
+                <input type="submit" value="ສະໝັກເລີຍ" class="btn btn-success"/>
             </form>
-        </div>
-        <div class="col">
         </div>
       </div>
     <!-- Content here -->

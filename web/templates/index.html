@@ -2,32 +2,37 @@
 {% load crispy_forms_tags %}
 {% block content %}
 <div class="container">
-  <div class="col-md-9">
-  <div class="row">
+  <div class="card-group">
     {% for list in dataset %} 
-    <div class="col-md-4">
-    <div class="card">
-      <img src="{{list.image.url}}" class="card-img-top">
+    <div class="card" >
+      <img src="{{list.image.url}}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">{{list.name}}</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">{{list.created}}</small></p>
       </div>
       <div class="card-footer">
         <small class="text-muted">{{list.created}}</small>
-        <a href="{{list.id}}">ເບິງ</a>
-        <p><a href="{% url 'post-edit' list.id %}">ແກ້ໄຂ</a></p>
+        <a href="{{list.id}}">ເບິງ</a>|<a href="{% url 'post-edit' list.id %}">ແກ້ໄຂ</a></p>
         
       </div>
     </div>
-  </div>
+    {% endfor %}
 </div>
-</div>
+{% endblock %}
+
+<div class="card-group">
+  {% for list in dataset %} 
+  <div class="card">
+    <img src="{{list.image.url}}" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">{{list.name}}</h5>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">{{list.created}}</small>
+      <a href="{{list.id}}">ເບິງ</a>|<a href="{% url 'post-edit' list.id %}">ແກ້ໄຂ</a></p>
+      
+    </div>
 {% empty %}
 <h3>no picture</h3>
 {% endfor %}
-
-
-</div>
-
-
-               
-{% endblock %}

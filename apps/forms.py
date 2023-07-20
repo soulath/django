@@ -14,8 +14,35 @@ class RegisterForm(UserCreationForm):
           "class": "input",
           "type": "text",
           "placeholder": "ກະລຸນາປ້ອນໃສ",
+          "class": "form-control"
 
     }), label="ຊື່ຜູ້ໃຊ້")
+
+    email = forms.EmailField(widget=forms.EmailInput(attrs={
+         "class": "input",
+          "type": "text",
+          "placeholder": "ກະລຸນາປ້ອນໃສ",
+          "class": "form-control"
+          
+    }), label="ອີເມວ")
+
+
+
+    password1 = forms.CharField(widget=forms.PasswordInput(attrs={
+         "class": "input",
+          "type": "text",
+          "placeholder": "ກະລຸນາປ້ອນໃສ",
+          "class": "form-control"
+          
+    }), label="ລະຫັດຜ່ານ")
+
+    password2 = forms.CharField(widget=forms.PasswordInput(attrs={
+         "class": "input",
+          "type": "text",
+          "placeholder": "ກະລຸນາປ້ອນໃສ",
+          "class": "form-control"
+          
+    }), label="ຢື້ນຢັ້ນລະຫັດຜ່ານ")
     class Meta:
         model=User
         fields = ['username','email','password1','password2'] 
