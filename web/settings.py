@@ -28,7 +28,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 SECRET_KEY = 'django-insecure-@jz+#s3_-q(!b)nab&#y5ip@q1q6k0$$weofj17+hc72v=v8$s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ["*"]
 CORS_ORIGIN_ALLOW_ALL = True
 
@@ -139,8 +139,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / "staticfiles_build" / "static"
-
+STATICFILES_DIRS = [BASE_DIR / 'static']
 
 
 # Default primary key field type
