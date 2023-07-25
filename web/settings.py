@@ -73,7 +73,7 @@ MESSAGE_TAGS = {
         messages.ERROR: 'alert-danger',
  }
 ROOT_URLCONF = 'web.urls'
-TEMPLATE_DIR = os.path.join(CORE_DIR, "templates")
+TEMPLATE_DIR = os.path.join(CORE_DIR, "web/templates")
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
