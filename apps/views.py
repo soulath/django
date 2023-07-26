@@ -21,6 +21,8 @@ def home(request):
 
         #list = Blogs.objects.all()
         #return render(request, "index.html", {'dataset': list})
+def dashboard(request):
+    return render(request, 'dashboard.html')
 @login_required
 def add(request):
     if request.method == 'GET':
@@ -74,7 +76,7 @@ def sign_in(request):
             if user:
                 login(request, user)
                 messages.success(request,f'ຍິນດີຕ້ອນຮັບ: {username.title()}')
-                return redirect('addblog')
+                return redirect('/')
         
         # either form not valid or user is not authenticated
         messages.error(request,f'Invalid username or password')
