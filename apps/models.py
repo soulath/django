@@ -27,6 +27,6 @@ class UserProfile(models.Model):
     province = models.CharField(max_length=40, null=True)
     district = models.CharField(max_length=40, null=True)
     mobile = models.CharField(max_length=12, null=True)
-    picture = models.ImageField(upload_to="gallery", blank=True)
+    image = models.ImageField(upload_to="gallery", blank=True)
     def __str__(self) -> str:
         return self.user.username
