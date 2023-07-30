@@ -1,12 +1,13 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.http import HttpResponse
-from .models import Blogs, Category
+from .models import Blogs, Category,UserProfile
 from .forms import BlogsForm, RegisterForm, LoginForm
 from django.db.models import Q 
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import  login_required
 from django.shortcuts import render,redirect, get_object_or_404
+from django.contrib.auth.models import User
 
 
 # Create your views here.
@@ -21,6 +22,11 @@ def home(request):
 
         #list = Blogs.objects.all()
         #return render(request, "index.html", {'dataset': list})
+
+def userprofile(request):
+    pro = UserProfile.objects.all()
+    return render(request, 'profile.html', {'prof': pro})
+    
 def dashboard(request):
     return render(request, 'dashboard.html')
 @login_required

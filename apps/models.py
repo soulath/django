@@ -1,5 +1,6 @@
+from email.policy import default
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 class Category(models.Model):
     name = models.CharField(max_length=255,unique=True)
@@ -19,3 +20,13 @@ class Blogs(models.Model):
 
     def __str__(self):
         return self.name
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    village = models.CharField(max_length=40, null=True)
+    province = models.CharField(max_length=40, null=True)
+    district = models.CharField(max_length=40, null=True)
+    mobile = models.CharField(max_length=12, null=True)
+    picture = models.ImageField(upload_to="gallery", blank=True)
+    def __str__(self) -> str:
+        return self.user.username
